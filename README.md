@@ -14,9 +14,11 @@ We reported that GAN-based methods can generate 256x256 pixel size of fetal ultr
 The results of this work illustrate the potential of GAN-based methods to synthesise realistic high-resolution ultrasound images, leading to future work with other fetal brain planes, anatomies, devices and the need of a pool of experts to evaluate synthesised images.
 Code, data and other resources to reproduce this work are available at \url{https://github.com/budai4medtech/midl2023}.
 
+![fig](short-paper/figures/main-results/outputs/drawing-v00.png)
+
 ## Clone repository
 After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) (or [here](https://github.com/mxochicale/tools/blob/main/github/SSH.md) with few extra notes).
-You can then clone the repository by typing (or copying) the following line in a terminal at your selected path in your machine:
+You can then clone the repository by typing (or copying) the following lines in a terminal:
 ```
 mkdir -p ~/repositories/budai4medtech && cd ~/repositories/budai4medtech # suggested path
 git clone git@github.com:budai4medtech/midl2023.git
