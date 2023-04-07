@@ -1,10 +1,9 @@
 <h1 align="center">:page_facing_up: Towards Realistic Ultrasound Fetal Brain Imaging Synthesis (:baby: :brain: :robot:) </h1>
 <div align="center">
 
-Authors: Michelle Iskandar2, Harvey Mannering1, Zhanxiang Sun1, Jacqueline Matthew2, Hamideh Kerdegari2, Laura Peralta2, Miguel Xochicale1    
-1 University College London, 2 King’s College London
+Michelle Iskandar [2], Harvey Mannering [1], Zhanxiang Sun [1], Jacqueline Matthew [2], Hamideh Kerdegari [2], Laura Peralta [2], Miguel Xochicale [1]    
+[1] University College London, [2] King’s College London
 
-Medical Imaging with Deep Learning (MIDL2023)
 </div>
 
 ## Abstract
