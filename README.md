@@ -15,7 +15,7 @@ The results of this work illustrate the potential of GAN-based methods to synthe
 Code, data and other resources to reproduce this work are available at \url{https://github.com/budai4medtech/midl2023}.
 
 ![fig](short-paper/figures/main-results/outputs/drawing-v00.png)
-Results from Diffusion-Super-resolution-GAN (DSR-GAN) and transformer-based-GAN (TB-GAN):
+**Figure** Results from Diffusion-Super-resolution-GAN (DSR-GAN) and transformer-based-GAN (TB-GAN):
 	(a) Training losses for Generator and Discriminator networks,
 	(b) FID scores, and
 	(c) 256x256 pixel size trans-cerebellum images of two randomised batches (B1, B2) of real and synthesised (DSR-GAN and TB-GAN).
