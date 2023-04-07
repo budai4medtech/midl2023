@@ -1,0 +1,38 @@
+# Ignored paths and directories
+## pycharm project path
+.idea
+
+## temporal __pycache__/
+**/__pycache__/
+
+## .ipynb_checkpoints/
+**/.ipynb_checkpoints
+
+## ignores vim temporal files
+**/*.swp
+
+## ignore dataset paths
+**/fetal_planes     
+#**/fetal_planes (2.1GB)
+
+## temporal files for local tex build
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.nav
+**/main.pdf
+**/midl-fullpaper.pdf
+**/midl-shortpaper.pdf
+**/*.snm
+**/*.synctex.gz
+**/*.toc
+**/_minted-main
+**/*.bbl
+**/*.blg
+**/*.out
+**/comment.cut
+
+notebooks/.DS_Store
+notebooks/StyleSwin/.jupyter/desktop-workspaces/default-37a8.jupyterlab-workspace
+.DS_Store
