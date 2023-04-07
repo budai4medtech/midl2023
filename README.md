@@ -1,8 +1,8 @@
 <h1 align="center">:page_facing_up: Towards Realistic Ultrasound Fetal Brain Imaging Synthesis (:baby: :brain: :robot:) </h1>
 <div align="center">
 
-Michelle Iskandar [2], Harvey Mannering [1], Zhanxiang Sun [1], Jacqueline Matthew [2], Hamideh Kerdegari [2], Laura Peralta [2], Miguel Xochicale [1]    
-[1] University College London, [2] King’s College London
+Michelle Iskandar 2, Harvey Mannering 1, Zhanxiang Sun 1, Jacqueline Matthew 2, Hamideh Kerdegari 2, Laura Peralta 2, Miguel Xochicale 1    
+1 University College London, and 2 King’s College London
 
 </div>
 
