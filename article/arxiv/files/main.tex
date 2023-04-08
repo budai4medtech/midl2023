@@ -10,12 +10,6 @@
 %%%
 %%%
 %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Github repository:
-%%% The resources to reproduce this work are available at 
-%%% [LINK]: https://github.com/budai4medtech/midl2023
-%%%
-%%%
 %%%
 
 
@@ -42,10 +36,51 @@
 
 \title[
 %Short Title
-Towards Realistic High-Resolution Ultrasound Fetal Brain Imaging Synthesis % 3 Apr 2023
+Towards Realistic Ultrasound Fetal Brain Imaging Synthesis %Tue  4 Apr 07:28:33 BST 2023
 ]{
 Towards Realistic Ultrasound Fetal Brain Imaging Synthesis %Tue  4 Apr 07:28:33 BST 2023
 }
+
+ % Use \Name{Author Name} to specify the name.
+ % If the surname contains spaces, enclose the surname
+ % in braces, e.g. \Name{John {Smith Jones}} similarly
+ % if the name has a "von" part, e.g \Name{Jane {de Winter}}.
+ % If the first letter in the forenames is a diacritic
+ % enclose the diacritic in braces, e.g. \Name{{\'E}louise Smith}
+
+ % Two authors with the same address
+ % \midlauthor{\Name{Author Name1} \Email{abc@sample.edu}\and
+ %  \Name{Author Name2} \Email{xyz@sample.edu}\\
+ %  \addr Address}
+
+ % Three or more authors with the same address:
+ % \midlauthor{\Name{Author Name1} \Email{an1@sample.edu}\\
+ %  \Name{Author Name2} \Email{an2@sample.edu}\\
+ %  \Name{Author Name3} \Email{an3@sample.edu}\\
+ %  \addr Address}
+
+
+% Authors with different addresses:
+% \midlauthor{\Name{Author Name1} \Email{abc@sample.edu}\\
+% \addr Address 1
+% \AND
+% \Name{Author Name2} \Email{xyz@sample.edu}\\
+% \addr Address 2
+% }
+
+% \footnotetext[1]{Contributed equally}
+
+% % More complicate cases, e.g. with dual affiliations and joint authorship
+% \midlauthor{\Name{Author Name1\midljointauthortext{Contributed equally}\nametag{$^{1,2}$}} \Email{abc@sample.edu}\\
+% \addr $^{1}$ Address 1 \\
+% \addr $^{2}$ Address 2 \AND
+% \Name{Author Name2\midlotherjointauthor\nametag{$^{1}$}} \Email{xyz@sample.edu}\\
+% \Name{Author Name3\nametag{$^{2}$}} \Email{alphabeta@example.edu}\\
+% \Name{Author Name4\midljointauthortext{Contributed equally}\nametag{$^{3}$}} \Email{uvw@foo.ac.uk}\\
+% \addr $^{3}$ Address 3 \AND
+% \Name{Author Name5\midlotherjointauthor\nametag{$^{4}$}} \Email{fgh@bar.com}\\
+% \addr $^{4}$ Address 4
+% }
 
 
 % More complicate cases, e.g. with dual affiliations and joint authorship
@@ -76,8 +111,8 @@ The results of this work illustrate the potential of GAN-based methods to synthe
 Code, data and other resources to reproduce this work are available at \url{https://github.com/budai4medtech/midl2023}.
 \end{abstract}
 
-%List of keywords, comma separated.
 \begin{keywords}
+%List of keywords, comma separated.
 Medical Image Synthesis, Ultrasound Fetal Imaging, GANs
 \end{keywords}
 
@@ -93,10 +128,12 @@ Despite such advances, there are few challenges faced in prenatal imaging:
 (e) the cost of acquisition of clinical data
 as it requires expensive imaging equipment and experts for data collection and validation~\citep{Wang2019, Kim2019}.
 Given the advances with generative adversarial networks (GAN) methods to handle problems in medical reconstructions, image resolution, enhancement, segmentation, lesion detection, data simulation or classification~\citep{2022_AlAmir_GANMedicalSurvey}, we hypnotise that realistic ultrasound imaging can address challenges in data scarcity, accessibility and expensiveness.
-For instance, \citet{Kazeminia2020} presented a review of the state-of-the-art research in GAN in medical imaging for classification, denoising, reconstruction, synthesis, registration, and detection.
+For instance, 
 \citet{Hu2017} proposed a method of generating freehand ultrasound image simulation using a spatially conditioned GAN.
+\citet{Kazeminia2020} presented a review of the state-of-the-art research in GAN in medical imaging for classification, denoising, reconstruction, synthesis, registration, and detection.
 \citet{Montero2021} proposed a method to generate fetal brain US images using an unconditional GAN, StyleGAN2, specifically to improve the fine-grained plane classification, specifically the trans-thalamic and trans-ventricular plane.
-Hence, the aim of this work is to show the potential of GAN-based methods to generate realistic ultrasound fetal brain imaging.
+% ultrasound fetal imaging~\citep{Korkinof2018_arxiv, Fujioka2019}
+Hence, the aim of this work is to show the potential of GAN-based methods to generate realistic ultrasound fetal trans-cerebellum brain plane imaging with small datasets.
 
 
 
@@ -118,26 +155,26 @@ Scans were collected by multiple operators of similar skill level at BCNatal dur
 DICOM images were collected and anominsied using png format, resulting in images of various pixel size (e.g., 692x480, 745x559, and 961x663).
 
 \section{Experiments: Design and results}
-Diffusion model was finetuned for 10000 epochs with the Adam optimiser to then train SRGAN for 200 epochs from scratch with the Adam optimiser. The images used to train both models are flipped horizontally, zoomed and rotated randomly to increase the variety of the dataset(Fig~\ref{fig:main_results}).
-Transfer learning is used when training StyleSwin. The model was firstly pre-trained on Trans-thalamus plane for 500 epochs for this plane contains significantly larger number of images. Then, the model was fine-tuned on Trans-cerebellum plane images for an additional 200 epochs. Adam optimizer was also used during both pre-training and fine-tuning stages, following the two time-scale update rule with learning rates of 1e-4 for the discriminator and 1e-5 for the generator ~\cite{Heuvel2018}. 
+Diffusion model was finetuned for 10000 epochs with the Adam optimiser to then train SRGAN for 200 epochs from scratch with the Adam optimiser. The images used to train both models are flipped horizontally, zoomed and rotated randomly to increase the variety of the dataset(Fig~\ref{fig:main_results}c).
+Transfer learning is used when training StyleSwin. The model was firstly pre-trained on Trans-thalamus plane for 500 epochs as contains larger number of images (1072). Then, the model was fine-tuned on Trans-cerebellum plane images for an additional 200 epochs. Adam optimizer was also used during both pre-training and fine-tuning stages, following the two time-scale update rule with learning rates of 1e-4 for the discriminator and 1e-5 for the generator ~\cite{Heuvel2018}. 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.99\columnwidth]{../figures/main-results/outputs/drawing-v00}%%GITHUB
-    %\includegraphics[width=0.80\textwidth]{figures/main-fig-results.png} %%OVERLEAF
-    % % {\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
+    %\includegraphics[width=0.99\textwidth]{../figures/main-results/outputs/drawing-v00}%%GITHUB
+    %\includegraphics[width=0.99\textwidth]{figures/main-fig-results.png} %%OVERLEAF
+    \includegraphics[width=0.99\textwidth]{main-fig-results.png} %%ARXIV
 \caption{
-	Results from Diffusion-Super-resolution-GAN (DSR-GAN) and transformer-based-GAN (TB-GAN) for:
-	(a, d) Training losses for Generator and Discriminator networks,
-	(b, e) FID scores, and
-	(c, f) two randomised batches of real and synthesised trans-cerebellum images.
+	Results from Diffusion-Super-resolution-GAN (DSR-GAN) and transformer-based-GAN (TB-GAN):
+	(a) Training losses for Generator and Discriminator networks,
+	(b) FID scores, and
+	(c) 256x256 pixel size trans-cerebellum images of two randomised batches (B1, B2) of real and synthesised (DSR-GAN and TB-GAN).
     }
 \label{fig:main_results}
 \end{figure}    
 
 \section{Conclusions and future work}
 Synthesising fetal brain images with the diffusion-Super-Resolution-GAN and transformer-based-GAN methods were successful, generating images of 256x256 pixel size resolution with stable loss values and 
-resulting in lower diffusion-super-resolution-GAN FID values (average 7.04 and lower FID 5.09 at epoch 10) compared to FID values of transformer-based-GAN (average 36.02 and lower 28.93 at epoch 60).
-Such results suggest, as future work, the potential to synthesise realistic higher-resolution fetal ultrasound images.
+resulting in lower FID values for diffusion-super-resolution-GAN (average 7.04 and lower FID 5.09 at epoch 10) compared to FID values of transformer-based-GAN (average 36.02 and lower 28.93 at epoch 60).
+Such results suggest, as future work, the potential to synthesise realistic higher-resolution fetal ultrasound images for other anatomies and ultrasound-devices.
 
 
 % % Acknowledgments---Will not appear in anonymized version
@@ -145,10 +182,14 @@ Such results suggest, as future work, the potential to synthesise realistic high
 % We thank a bunch of people.
 % }
 
+% \newpage 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibliography{../references/references}%%%GITHUB
+%\bibliography{../references/references}%%%GITHUB
 %\bibliography{references}%%%OVERLEAF
-% \input{main.bbl}%%%ARXIV
+%\bibliography{../../references/references}%%%GITHUB/ARXIV
+\input{main.bbl}%%%ARXIV
+
 
 \end{document}
+

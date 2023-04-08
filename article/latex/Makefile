@@ -8,7 +8,7 @@ EVINCE = evince
 FLAGS = -pdf -pdflatex="pdflatex -interaction=nonstopmode -shell-escape -file-line-error %O %S" -use-make
 
 ##Project name
-PROJNAME=midl-shortpaper
+PROJNAME=main
 
 ## Rules
 $(PROJNAME).pdf: $(PROJNAME).tex
