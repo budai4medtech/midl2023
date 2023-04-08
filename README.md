@@ -13,7 +13,7 @@ To address such data scarcity, we proposed generative adversarial networks (GAN)
 We reported that GAN-based methods can generate 256x256 pixel size of fetal ultrasound trans-cerebellum brain image plane with stable training losses, resulting in lower FID values for diffusion-super-resolution-GAN (average 7.04 and lower FID 5.09 at epoch 10) than the FID values of transformer-based-GAN (average 36.02 and lower 28.93 at epoch 60).
 The results of this work illustrate the potential of GAN-based methods to synthesise realistic high-resolution ultrasound images, leading to future work with other fetal brain planes, anatomies, devices and the need of a pool of experts to evaluate synthesised images.
 
-![fig](short-paper/figures/main-results/outputs/drawing-v00.png)
+![fig](article/figures/main-results/outputs/drawing-v00.png)
 **Figure.** Results from Diffusion-Super-resolution-GAN (DSR-GAN) and transformer-based-GAN (TB-GAN):
 	(a) Training losses for Generator and Discriminator networks,
 	(b) FID scores, and
