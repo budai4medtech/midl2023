@@ -6,6 +6,8 @@ Michelle Iskandar 2, Harvey Mannering 1, Zhanxiang Sun 1, Jacqueline Matthew 2, 
 
 </div>
 
+[![article](https://img.shields.io/badge/article-arXiv-orange.svg)](https://arxiv.org/abs/2304.03941)
+
 ## Abstract
 Prenatal ultrasound imaging is the first-choice modality to assess fetal health.
 Medical image datasets for AI and ML methods must be diverse (i.e. diagnoses, diseases, pathologies, scanners, demographics, etc), however there are few public ultrasound fetal imaging datasets due to insufficient amounts of clinical data, patient privacy, rare occurrence of abnormalities in general practice, and limited experts for data collection and validation.
@@ -27,6 +29,26 @@ You can then clone the repository by typing (or copying) the following lines in 
 mkdir -p ~/repositories/budai4medtech && cd ~/repositories/budai4medtech # suggested path
 git clone git@github.com:budai4medtech/midl2023.git
 ```
+
+## Citations
+BibTeX to cite
+```
+@misc{iskandar2023realistic,
+      author={
+      	Michelle Iskandar and 
+      	Harvey Mannering and 
+      	Zhanxiang Sun and 
+      	Jacqueline Matthew and 
+      	Hamideh Kerdegari and 
+      	Laura Peralta and 
+      	Miguel Xochicale},
+      title={Towards Realistic Ultrasound Fetal Brain Imaging Synthesis}, 
+      year={2023},
+      eprint={2304.03941},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV}
+}
+``` 
 
 ## Contributors
 Thanks goes to all these people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):  
