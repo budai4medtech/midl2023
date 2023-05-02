@@ -1,0 +1,60 @@
+\documentclass[xcolor={dvipsnames},aspectratio=169,10pt]{beamer}
+\usetheme{mx}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+%\input{preamble.tex}
+
+\title{  
+Towards Realistic Ultrasound Fetal Brain Imaging Synthesis
+} 
+\subtitle{
+Medical Imaging with Deep Learning 2023 (MIDL2023)
+}
+
+\author{
+Michelle Iskandar 2, Harvey Mannering 1, Zhanxiang Sun 1,
+Jacqueline Matthew 2, Hamideh Kerdegari 2, Laura Peralta 2 and {\bf Miguel Xochicale 1} (\faTwitter @\_mxochicale  \faGithub @mxochicale)
+}
+\date{
+2nd of May 2023
+%\today
+}
+\institute{
+	1 Advanced Research Computing Centre and WEISS at University College London \\
+	2 King's College London
+	}
+
+\titlegraphic{
+  \begin{tikzpicture}[overlay, remember picture]
+    \node[%
+      above right=0.35cm and -0.2cm of current page footer area.south west,
+      anchor=south west,
+      inner sep=0pt] {%
+      \usebeamerfont{footline}
+      \begin{tabular}{lm{.8\textwidth}}
+        \href{http://creativecommons.org/licenses/by/4.0/}{\ccby} &
+        This slices is licensed under a
+	\href{http://creativecommons.org/licenses/by/4.0/}
+		{Creative Commons ``Attribution 4.0 International''} license. 
+	\par Get source of this slides and see further references from {https://github.com/budai4medtech/midl2023}.
+      \end{tabular}
+    };
+    \node[%
+      above left=0.35cm and 0cm of current page footer area.south east,
+      anchor=south east,
+      inner sep=0pt]{\qrcode[height=1.5cm]{https://github.com/budai4medtech/midl2023}};
+  \end{tikzpicture}
+}
+
+\begin{document}
+\maketitle
+
+\begin{frame}
+\frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\input{content-tex/ultrasound-image-synthesis}
+
+\maketitle
+\end{document}

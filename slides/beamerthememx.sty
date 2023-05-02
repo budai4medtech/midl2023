@@ -1,0 +1,166 @@
+% Name           : beamerthememx.sty
+% Author         : Miguel Xochicale (miguel.xochicale@klc.ac.uk)
+% Author         : Séverin Lemaignan (severin.lemaignan@epfl.ch)
+% License        : This file may be distributed and/or modified under the
+%                  GNU Public License.
+
+\ProvidesPackage{beamerthememx}[2021/05/14]
+
+\usepackage{fontawesome}
+\usepackage{multimedia}
+
+\usepackage[scale=2]{ccicons}
+\usepackage{qrcode}
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{positioning}
+
+%%% FONTS
+\usefonttheme{serif}
+
+%%%%% Special commands
+\newcommand\BigSizeFont{\fontsize{25}{7.2}\selectfont} %https://tex.stackexchange.com/questions/33969
+\newcommand\bigSizeFont{\fontsize{18}{4.2}\selectfont}
+
+% table related packages
+\usepackage{array}
+
+%% Colours
+\definecolor{foreground}{RGB}{255,255,255}
+\definecolor{background}{RGB}{24,24,24}
+\definecolor{title}{RGB}{107,174,214}
+\definecolor{gray}{RGB}{155,155,155}
+\definecolor{subtitle}{RGB}{102,255,204}
+\definecolor{hilight}{RGB}{102,255,204}
+\definecolor{vhilight}{RGB}{255,111,207}
+
+\setbeamercolor{titlelike}{fg=title}
+\setbeamercolor{subtitle}{fg=subtitle}
+\setbeamercolor{institute}{fg=gray}
+\setbeamercolor{normal text}{fg=foreground,bg=background}
+\setbeamercolor{section in toc}{fg=subtitle}
+
+\setbeamercolor{item}{fg=foreground} % color of bullets
+\setbeamercolor{subitem}{fg=gray}
+\setbeamercolor{itemize/enumerate subbody}{fg=gray}
+
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsectionnumber.\inserttocsubsectionnumber.~\inserttocsubsection\par}
+
+%---------------------------------------------------------------------
+% custom commands
+%---------------------------------------------------------------------
+\newcommand{\@githubrepository}{}
+\newcommand{\githubrepository}[1]{\def\@githubrepository{#1}}
+
+% Titlepage structure
+\def\maketitle{\ifbeamer@inframe\titlepage\else{\setbeamertemplate{background}{}\frame[plain]{\titlepage}}\fi}
+\def\titlepage{
+\usebeamertemplate{title page}
+}
+
+
+
+\setbeamertemplate{title page}{%
+
+    \begin{minipage}[b][\paperheight]{\textwidth}
+%    % Add background to title page
+%    \AddToShipoutPictureFG*{\includegraphics[width=\paperwidth]{background.pdf}}
+%    \begin{minipage}[b][\paperheight]{\textwidth}
+    \vspace*{10mm}
+%    \includegraphics[height=14mm]{logo}\par
+%    \vspace*{5mm}
+    \ifx\insertsubtitle\@empty%
+    \else%
+        {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
+    \fi%
+    \ifx\insertsubtitle\@empty%
+    \else%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+        \vspace*{5mm}
+    \fi%
+    \ifx\insertdate\@empty%
+    \else%
+        {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+    \fi%
+%
+    \vfill
+        \vspace*{30mm}
+
+    \ifx\insertauthor\@empty%
+    \else%
+        {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
+    \fi%
+    \ifx\insertinstitut\@empty%
+    \else%
+        \vspace*{3mm}
+        {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+    \fi%
+
+    \vspace*{10mm}
+    \end{minipage}
+
+
+    \begin{tikzpicture}[overlay, remember picture]
+    \node[
+      above right=0.35cm and -0.2cm of current page footer area.south west,
+      anchor=south west,
+      inner sep=-10pt] {
+    \fontsize{4pt}{7.2}\selectfont
+      \begin{tabular}{lm{.8\textwidth}}
+        \href{http://creativecommons.org/licenses/by/4.0/}{\ccby} &
+        This slices is licensed under a
+	\href{http://creativecommons.org/licenses/by/4.0/}
+		{Creative Commons ``Attribution 4.0 International''} license.
+	\par Get source of this slides and see further references
+		from \url{\@githubrepository}
+      \end{tabular}
+    };
+    \node[
+      above left=0.35cm and 0cm of current page footer area.south east,
+      anchor=south east,
+      inner sep=0pt]{\qrcode[height=1.5cm]{\@githubrepository}};
+    \end{tikzpicture}
+
+}
+
+
+%---------------------------------------------------------------------
+% Footline
+%---------------------------------------------------------------------
+\usenavigationsymbolstemplate{} % hides small icons in bottom right corner use to navigate the presentation
+\setbeamertemplate{footline}
+{
+
+%\begin{beamercolorbox}[wd=\textwidth,ht=3ex,dp=1.5ex,leftskip=0.3cm,rightskip=0.3cm]{structure}%
+%\usebeamerfont{page number in head/foot}%
+%\hfill\insertframenumber%
+%\end{beamercolorbox}
+
+    \raisebox{5pt}{\makebox[\paperwidth]{
+        \hfill\makebox[20pt]{
+            \color{gray}
+            \scriptsize\insertframenumber}
+    }
+    }
+}
+
+%\hspace*{5pt}}
+
+%---------------------------------------------------------------------
+% Add Paper using {\paper{}. begin{beawer} ... end{beamer} }
+%---------------------------------------------------------------------
+\newcommand\paper[1]{
+	\setbeamertemplate{footline}
+	{
+		\begin{beamercolorbox}[wd=\textwidth,ht=3mm,dp=03mm,leftskip=0.3cm,rightskip=0.3cm]{black}%
+        		\usebeamerfont{page number in head/foot}
+                \color{gray}
+                [#1]\mbox{}
+                \color{gray}
+                \scriptsize
+                \hfill
+                \insertframenumber
+		\end{beamercolorbox}%
+	}
+}
