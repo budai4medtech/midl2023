@@ -1406,13 +1406,8 @@
        x="1333.9097"
        y="2239.5305"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari;stroke-width:1px" /></flowRegion><flowPara
-     id="flowPara60708">Synthesising fetal brain images with the diffusion-Super-Resolution-GAN and transformer-based-GAN methods were successful, generating images of 256x256 pixel size resolutionwith stable loss values and resulting in lower FID values for diffusion-super-resolution-GAN(average 7.04 and lower FID 5.09 at epoch 10) compared to FID values of transformer-based-GAN (average 36.02 and lower 28.93 at epoch 60). Such results suggest, as futurework, the potential to synthesise realistic higher-resolution fetal ultrasound images for otheranatomies and ultrasound-devices.</flowPara><flowPara
-     id="flowPara4751" /><flowPara
-     id="flowPara4753" /><flowPara
-     id="flowPara4755" /><flowPara
-     id="flowPara4757" /><flowPara
-     id="flowPara4759" /><flowPara
-     id="flowPara4761" /></flowRoot>
+     id="flowPara4761">Synthesising fetal brain images with the diffusion-Super-Resolution-GAN and transformer-based-GAN methods were successful, generating images of 256x256 pixel size resolution with stable loss values and resulting in lower FID values for diffusion-super-resolution-GAN(average 7.04 and lower FID 5.09 at epoch 10) compared to FID values of transformer-based-GAN (average 36.02 and lower 28.93 at epoch 60). Such results suggest, as future work, the potential to synthesise realistic higher-resolution fetal ultrasound images for other anatomies and ultrasound-devices.</flowPara><flowPara
+     id="flowPara2192" /></flowRoot>
 
 
 
@@ -1435,7 +1430,7 @@
        x="1517.7374"
        y="1463.9689"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari;stroke-width:1px" /></flowRegion><flowPara
-     id="flowPara133784">Trans-cerebellum brain plane ultrasound images from Voluson E6 were used for this work,consisting of 408 training images (Burgos-Artizzu et al., 2020a,b).</flowPara><flowPara
+     id="flowPara133784">Trans-cerebellum brain plane ultrasound images from Voluson E6 were used for this work, consisting of 408 training images (Burgos-Artizzu et al., 2020a,b).</flowPara><flowPara
      id="flowPara9332" /></flowRoot>
 
 
@@ -1575,7 +1570,7 @@
        y="973.96173"
        style="stroke-width:1px" /></flowRegion><flowPara
      id="flowPara2429"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari">Prenatal ultrasound imaging is the first-choice modality to assess fetal health. Medicalimage datasets for AI and ML methods must be diverse (i.e. diagnoses, diseases, patholo-gies, scanners, demographics, etc), however there are few public ultrasound fetal imagingdatasets due to insufficient amounts of clinical data, patient privacy, rare occurrence of ab-normalities in general practice, and limited experts for data collection and validation. Toaddress such data scarcity, we proposed generative adversarial networks (GAN)-based mod-els, diffusion-super-resolution-GAN and transformer-based-GAN, to synthesise images offetal ultrasound brain planes from one public dataset.</flowPara><flowPara
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari">Prenatal ultrasound imaging is the first-choice modality to assess fetal health. Medical image datasets for AI and ML methods must be diverse (i.e. diagnoses, diseases, patholo-gies, scanners, demographics, etc), however there are few public ultrasound fetal imaging datasets due to insufficient amounts of clinical data, patient privacy, rare occurrence of abnormalities in general practice, and limited experts for data collection and validation. Toaddress such data scarcity, we proposed generative adversarial networks (GAN)-based models, diffusion-super-resolution-GAN and transformer-based-GAN, to synthesise images of fetal ultrasound brain planes from one public dataset.</flowPara><flowPara
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari"
      id="flowPara8136" /><flowPara
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari"
@@ -2044,7 +2039,7 @@
        y="1305.5408"
        style="stroke-width:1px" /></flowRegion><flowPara
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari"
-     id="flowPara4193">We use StyleSwin model, which features Swin Transformer layers designed to capture highquality details of the original images while simultaneously reducing memory usage, enablingsynthesized images of higher resolutions (Zhang et al., 2022).</flowPara><flowPara
+     id="flowPara4193">We use StyleSwin model, which features Swin Transformer layers designed to capture highquality details of the original images while simultaneously reducing memory usage, enabling synthesized images of higher resolutions (Zhang et al., 2022).</flowPara><flowPara
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari"
      id="flowPara4205" /><flowPara
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari"
@@ -2075,15 +2070,7 @@
        x="1517.7374"
        y="1463.9689"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Kinnari;-inkscape-font-specification:Kinnari;stroke-width:1px" /></flowRegion><flowPara
-     id="flowPara4596">Diffusion model was finetuned for 10000 epochs with the Adam optimiser to then trainSRGAN for 200 epochs from scratch with the Adam optimiser. The images used to trainboth models are flipped horizontally, zoomed and rotated randomly to increase the varietyof the dataset(Fig 1c). Transfer learning is used when training StyleSwin. The model wasfirstly pre-trained on Trans-thalamus plane for 500 epochs as contains larger number ofimages (1072). Then, the model was fine-tuned on Trans-cerebellum plane images for anadditional 200 epochs. Adam optimizer was also used during both pre-training and fine-tuning stages, following the two time-scale update rule with learning rates of 1e-4 for thediscriminator and 1e-5 for the generator (van den Heuvel et al., 2018).</flowPara><flowPara
-     id="flowPara4600" /><flowPara
-     id="flowPara4602" /><flowPara
-     id="flowPara4604" /><flowPara
-     id="flowPara4606" /><flowPara
-     id="flowPara4608" /><flowPara
-     id="flowPara4610" /><flowPara
-     id="flowPara4612" /><flowPara
-     id="flowPara4614" /></flowRoot><image
+     id="flowPara4614">Diffusion model was finetuned for 10000 epochs with the Adam optimiser, we then train SRGAN for 200 epochs from scratch with the Adam optimiser. The images used to train both models are flipped horizontally, zoomed and rotated randomly to increase the variety of the dataset (Fig 1c). Transfer learning is used when training StyleSwin. The model was firstly pre-trained on Trans-thalamus plane for 500 epochs as contains larger number of images (1072). Then, the model was fine-tuned on Trans-cerebellum plane images for an additional 200 epochs. Adam optimizer was also used during both pre-training and fine-tuning stages, following the two time-scale update rule with learning rates of 1e-4 for the discriminator and 1e-5 for the generator (van den Heuvel et al., 2018).</flowPara></flowRoot><image
    width="182.13388"
    height="134.29633"
    preserveAspectRatio="none"
